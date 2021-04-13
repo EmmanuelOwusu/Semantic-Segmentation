@@ -16,7 +16,10 @@ args = vars(parser.parse_args())
 
 
 # download or load the model from disk
-model = torchvision.models.segmentation.fcn_resnet101(pretrained=True)
+# $python -c 'import torchvision;torchvision.models.segmentation.deeplabv3_resnet50(pretrained=True)'
+# Downloading: "https://download.pytorch.org/models/deeplabv3_resnet50_coco-cd0a2569.pth" to /home/moto/.cache/torch/checkpoints/deeplabv3_resnet50_coco-cd0a2569.pth
+# 100.0%
+model = torchvision.models.segmentation.deeplabv3_resnet50(pretrained=True)
 # set computation device
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 # model to eval() model and load onto computation devicce
